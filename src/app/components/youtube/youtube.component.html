@@ -1,0 +1,30 @@
+<!-- <div class="container">
+
+  <div class="row">
+      <div class="col-sm-12">
+          <h1>LekkerKijken</h1>
+          <p>Here comes the grid</p>
+      </div>
+
+  </div>
+
+</div> -->
+
+<form>
+        <input type = "text" [(ngModel)]="item" name="item">
+        <button (click)="submit(item)">Submit</button>
+      </form>
+
+
+
+<iframe *ngFor="let movie of movies"
+width="200" 
+height="150" 
+[src]="getVideoUrl(movie.id) | safepipe"
+frameborder="0" 
+allow="autoplay; encrypted-media" 
+allowfullscreen
+></iframe>
+
+
+
