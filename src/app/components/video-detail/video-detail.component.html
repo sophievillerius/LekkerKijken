@@ -1,0 +1,16 @@
+<h1>Movie Title: {{movie.title}}</h1>
+<h2>{{movie.description}}</h2>
+<div class="embed-responsive embed-responsive-16by9">
+<iframe width="100%" 
+            [src]="getVideoUrl(movie.youTubeId) | safepipe"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+            </iframe>
+</div>
+
+<nav>
+    <button (click)="goBack()">go back</button>
+  
+
+</nav>

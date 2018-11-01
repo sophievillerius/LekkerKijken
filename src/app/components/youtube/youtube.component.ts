@@ -31,6 +31,11 @@ export class YoutubeComponent implements OnInit {
     return "https://www.youtube.com/embed/" + embedUrl;
   }
 
+  getYouTubeImg(id: any) {
+    const embedUrl = String(id);
+    return "https://img.youtube.com/vi/" + embedUrl + "/0.jpg"
+  }
+
   // submit(item: string) {
   //   var newMovie: Movie = new Movie;
   //   newMovie.youTubeId = item;
