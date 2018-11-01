@@ -12,6 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { VideoCardComponent } from './components/video-card/video-card.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { AddFormComponent } from './components/add-form/add-form.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { VideoCardComponent } from './components/video-card/video-card.component
     FooterComponent,
     BannerComponent,
     HomepageComponent,
-    VideoCardComponent
+    VideoCardComponent,
+    LoginFormComponent,
+    AddFormComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
