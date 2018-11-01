@@ -15,6 +15,10 @@ export class YoutubeService {
   getAll(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.url);
   }
+  
+  getSingleMovie(id) {
+    return this.http.get<Movie>(this.url + id);
+  }
 
   submitMovie(title: string, youTubeId: string, description: string) {
     var newMovie: Movie = new Movie;

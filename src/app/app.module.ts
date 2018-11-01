@@ -15,6 +15,7 @@ import { VideoCardComponent } from './components/video-card/video-card.component
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { AddFormComponent } from './components/add-form/add-form.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     VideoCardComponent,
     LoginFormComponent,
     AddFormComponent,
-    DashboardComponent
+    DashboardComponent,
+    VideoDetailComponent
   ],
   imports: [
     BrowserModule,
