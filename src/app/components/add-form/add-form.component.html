@@ -1,5 +1,29 @@
-<h3>Toevoeg form page</h3>
-<form>
+<h3>Add movie</h3>
+<!-- <form>
   <input type = "text" [(ngModel)]="item" name="item">
   <button (click)="submit(item)">Submit</button>
-</form>
+</form> -->
+
+<form #movieForm="ngForm">
+<div class="container">
+  <h1>Movie Form</h1>
+  <form>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" [(ngModel)]="title" name="title" required>
+    </div>
+
+    <div class="form-group">
+      <label for="youTubeId">YouTube Id</label>
+      <input type="text" class="form-control" [(ngModel)]="youTubeId" name="youTubeId" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" [(ngModel)]="description" name="description">
+    </div>
+
+    <button (click)="submit(title, youTubeId, description)" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
