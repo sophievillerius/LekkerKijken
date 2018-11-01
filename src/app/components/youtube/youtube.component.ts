@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/youtube-movie';
-import { MOVIES } from '../../models/mock-movies';
+// import { MOVIES } from '../../models/mock-movies';
 import { YoutubeService } from 'src/app/services/youtube.service';
-import { getComponentViewByInstance } from '@angular/core/src/render3/context_discovery';
+// import { getComponentViewByInstance } from '@angular/core/src/render3/context_discovery';
 
 @Component({
   selector: 'app-youtube',

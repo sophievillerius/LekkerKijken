@@ -1,9 +1,16 @@
+.container-product {
+  width: 35%;
+  float: none;
+  margin: auto;
+  padding: 20px;
+}
+
 .product {
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    border-radius: 3px;
-    transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
   }
   
   /* Body design */
