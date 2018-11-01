@@ -31,10 +31,14 @@ export class YoutubeComponent implements OnInit {
     return "https://www.youtube.com/embed/" + embedUrl;
   }
 
-  submit(item: string) {
-    var newMovie: Movie = new Movie;
-    newMovie.youTubeId = item;
-    this.movies.push(newMovie);
+  // submit(item: string) {
+  //   var newMovie: Movie = new Movie;
+  //   newMovie.youTubeId = item;
+  //   this.movies.push(newMovie);
+  // }
+
+  submit(title: string, youTubeId: string, description: string) {
+    this.youtubeService.submitMovie(title, youTubeId, description);
   }
 
 

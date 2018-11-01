@@ -1,10 +1,4 @@
 
-<!-- Temp adding form TODO: will be have own form page with title and such -->
-<form>
-    <input type = "text" [(ngModel)]="item" name="item">
-    <button (click)="submit(item)">Submit</button>
-</form>
-
 <div class="container">
     <div class="row">
         <!-- video iframe card iteration -->
@@ -17,6 +11,7 @@
             allow="autoplay; encrypted-media" 
             allowfullscreen>
             </iframe>
+            {{movie.title}}
         </div>
     </div>
 </div>
