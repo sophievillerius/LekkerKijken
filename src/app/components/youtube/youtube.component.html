@@ -1,30 +1,22 @@
-<!-- <div class="container">
 
-  <div class="row">
-      <div class="col-sm-12">
-          <h1>LekkerKijken</h1>
-          <p>Here comes the grid</p>
-      </div>
-
-  </div>
-
-</div> -->
-
+<!-- Temp adding form TODO: will be have own form page with title and such -->
 <form>
-        <input type = "text" [(ngModel)]="item" name="item">
-        <button (click)="submit(item)">Submit</button>
-      </form>
+    <input type = "text" [(ngModel)]="item" name="item">
+    <button (click)="submit(item)">Submit</button>
+</form>
 
-
-
-<iframe *ngFor="let movie of movies"
-width="200" 
-height="150" 
-[src]="getVideoUrl(movie.id) | safepipe"
-frameborder="0" 
-allow="autoplay; encrypted-media" 
-allowfullscreen
-></iframe>
-
-
-
+<div class="container">
+    <div class="row">
+        <!-- video iframe card iteration -->
+        <div class="col-xs-12 col-sm-3" *ngFor="let movie of movies">
+            <iframe
+            width="200" 
+            height="150" 
+            [src]="getVideoUrl(movie.id) | safepipe"
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
