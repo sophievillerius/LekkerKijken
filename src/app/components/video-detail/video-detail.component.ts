@@ -10,7 +10,6 @@ import { Location } from '@angular/common';
   styleUrls: ['./video-detail.component.scss']
 })
 export class VideoDetailComponent implements OnInit {
-
   @Input() movie: Movie;
 
   constructor(
@@ -36,6 +35,11 @@ export class VideoDetailComponent implements OnInit {
   getVideoUrl(id: any) {
     const embedUrl = String(id);
     return "https://www.youtube.com/embed/" + embedUrl;
+  }
+
+  getMovies() {
+    this.obs = this.youtubeService.getAll()
+          .subscribe(movies => this.movies = movies);
   }
 
 }

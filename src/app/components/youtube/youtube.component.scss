@@ -5,7 +5,7 @@
 body {
    background-color: #F8FAFB;
    font-family: 'Open Sans', sans-serif;
-   padding-top: 10%;
+   //padding-top: 10%;
 }
 
 .col-md-5, .description {
@@ -48,10 +48,12 @@ body {
 
 .card-body {
    position: relative;
-   margin-top: -30%;
+   margin-top: -27%;
+   padding-top: 30px;
    color: #9FA7A9;
    .card-title {
-      font-weight: 600;
+       // margin-top: 5px;
+      font-weight: 300;
       color: #414345;
    }
    .card-text {
@@ -73,13 +75,13 @@ body {
    border-style: none;
    overflow: hidden;
    transform: scale(0.8);
-   margin-top: -60px;
+   margin-top: 0px;
 }
 
 .trailer-preview {
    background-color: #ff3d49;
    position: absolute;
-   top: -46px;
+   top: 0px;
    right: 24px;
    width: 80px;
    height: 80px;
