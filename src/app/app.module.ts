@@ -18,6 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 import { VideoDetailListComponent } from './components/video-detail-list/video-detail-list.component';
 import { ManageComponent } from './components/manage/manage.component';
+import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 @NgModule({
@@ -36,6 +37,7 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     VideoDetailComponent,
     VideoDetailListComponent,
     ManageComponent,
+    VideoThumbnailComponent
     EditModalComponent
   ],
   imports: [

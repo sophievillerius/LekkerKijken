@@ -1,0 +1,26 @@
+<div class="col-md-4" *ngFor="let movie of movies">
+  <div class="card">   
+      <div class="card-header">
+          <img class="card-img" [src]="getYouTubeImg(movie.youTubeId) | safepipe" alt="Card image">
+      </div>  
+      <div class="card-body">
+          <h1 class="card-title">{{movie.title}}</h1>
+          <div class="container">
+              <div class="row">
+                  <div class="col-4 metadata">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i> 
+                      <i class="fa fa-star"></i> 
+                      <i class="fa fa-star"></i> 
+                      <!-- <p>{{movie.rating}}</p> -->
+                  </div>
+                  <div class="col-8 metadata">Genre</div>
+              </div>
+          </div>      
+          <!-- <p class="card-text">{{movie.description}}</p> -->
+          <a class="trailer-preview" [routerLink]="['/detail', movie.id]">
+              <i class="fa fa-play"></i>
+          </a>
+      </div>
+  </div>
+</div>

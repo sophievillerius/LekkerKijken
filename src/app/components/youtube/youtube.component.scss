@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
-
 @import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
 
 body {
@@ -21,6 +20,10 @@ body {
    padding: 0;
    position: relative;
    border-style: none;
+   display: block;
+   height: 180px;
+   overflow: hidden;
+   margin-top: -35px;
 }
 
 .metadata {
@@ -48,10 +51,12 @@ body {
 .card-body {
    position: relative;
    color: #9FA7A9;
+   max-height: 80px;
    .card-title {
        font-size: 24px;
        margin-top: -20px;
-       padding-top: 5px;
+       padding: 5px;
+       margin-bottom: 10%;
        font-weight: 300;
        color: #414345;
    }
