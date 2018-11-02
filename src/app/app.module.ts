@@ -18,6 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 import { VideoDetailListComponent } from './components/video-detail-list/video-detail-list.component';
 import { ManageComponent } from './components/manage/manage.component';
+import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ManageComponent } from './components/manage/manage.component';
     DashboardComponent,
     VideoDetailComponent,
     VideoDetailListComponent,
-    ManageComponent
+    ManageComponent,
+    EditModalComponent
   ],
   imports: [
     BrowserModule,
