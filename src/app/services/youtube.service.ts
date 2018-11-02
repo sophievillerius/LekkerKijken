@@ -37,4 +37,10 @@ export class YoutubeService {
     this.http.delete(this.url + id).subscribe((data) => {});
     console.log("delete succeeded!");
   }
+
+  updateMovie(id: number, movie: Movie) {
+    console.log("updating movie");
+    this.http.put(this.url + id, movie).subscribe((data) => {});
+    console.log("update succeeded!");
+  }
 }

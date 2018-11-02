@@ -10,7 +10,7 @@
 <section class="channel-info">
 	<div class="container">
 		<div class="channel-title">
-			<h6>Titel: <span *ngIf = "movie.title">{{movie.title}}</span></h6>
+			<h6>Title: {{movie.title}}</h6>
 			<div class="channel-subscriber-count">Description: {{movie.description}}</div>
 		</div>
 		<div class="channel-subscribe">
@@ -19,6 +19,12 @@
 	</div>
 </section>
 <!-- End of channel info section -->
+
+Rate movie:
+<form>
+        <input type = "text" [(ngModel)]="rating" name="rating">
+        <button (click)="rateMovie(rating)">Submit</button>
+      </form>
 
 <div class="embed-responsive embed-responsive-16by9">
     <iframe width="100%" 
