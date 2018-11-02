@@ -46,7 +46,8 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     FormsModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
