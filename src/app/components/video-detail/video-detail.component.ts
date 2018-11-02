@@ -40,4 +40,9 @@ export class VideoDetailComponent implements OnInit {
     return "https://www.youtube.com/embed/" + embedUrl;
   }
 
+  rateMovie(rating) {
+    this.movie.rating = rating;
+    this.youtubeService.updateMovie(this.movie.id, this.movie);
+  }
+
 }

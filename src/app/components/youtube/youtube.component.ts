@@ -33,6 +33,13 @@ export class YoutubeComponent implements OnInit {
     return "https://img.youtube.com/vi/" + embedUrl + "/0.jpg"
   }
 
+  getStarArray(rating: number) {
+    var result = [];
+    for (var i = 1; i <= rating; i++)
+      result.push(i);
+    return result;
+  };
+
   // submit(item: string) {
   //   var newMovie: Movie = new Movie;
   //   newMovie.youTubeId = item;
