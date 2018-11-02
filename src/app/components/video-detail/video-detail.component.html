@@ -1,35 +1,24 @@
-<!-- Channel Banner -->
-<section class="channel-banner">
-	<div class="channel-social-links">
-		<ul>
-            <button class="btn btn-danger" (click)="goBack()">go back</button>
-		</ul>
-	</div>
-</section>
-<!-- Channel Info -->
+<!-- Begin iFrame -->
+<div class="embed-responsive embed-responsive-16by9">
+	<iframe width="100%" 
+	[src]="getVideoUrl(movie.youTubeId) | safepipe"
+	frameborder="0" 
+	allow="autoplay; encrypted-media" 
+	allowfullscreen>
+</iframe>
+</div>
+<!-- End iFrame -->
+
+<!-- Begin Channel info -->
 <section class="channel-info">
 	<div class="container">
 		<div class="channel-title">
-			<h6>Titel: <span *ngIf = "movie.title">{{movie.title}}</span></h6>
-			<div class="channel-subscriber-count">Description: {{movie.description}}</div>
-		</div>
-		<div class="channel-subscribe">
-            <!-- <button class="subscribe-btn btn">watch</button> -->
+			<h2><span *ngIf = "movie.title">{{movie.title}}</span></h2>
+			<div class="channel-subscriber-count">{{movie.description}}</div>
 		</div>
 	</div>
 </section>
 <!-- End of channel info section -->
 
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe width="100%" 
-    [src]="getVideoUrl(movie.youTubeId) | safepipe"
-    frameborder="0" 
-    allow="autoplay; encrypted-media" 
-    allowfullscreen>
-</iframe>
-</div>
-<!-- <nav>
-    <button (click)="goBack()">go back</button>
-</nav> -->
-
+<!-- Other videos -->
 <app-video-detail-list></app-video-detail-list>

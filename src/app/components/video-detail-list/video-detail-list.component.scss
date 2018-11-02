@@ -1,11 +1,7 @@
 /*
-
 All grid code is placed in a 'supports' rule (feature query) at the bottom of the CSS (Line 474). 
-        
 The 'supports' rule will only run if your browser supports CSS grid.
-
 Flexbox is used as a fallback so that browsers which don't support grid will still recieve an identical layout.
-
 */
 
 /* Base styles */
@@ -87,229 +83,37 @@ a {
     z-index: 1;
 }
 
-.logo {
-    flex: 0 0 15rem;
-    margin-left: 2.5rem;
-}
 
-.site-search {
-    flex-grow: 1;
-    margin: 0 2.5rem;
-}
 
-.menu-btn {
-    font-size: 1.6rem;
-    color: #888;
-    padding: 0 0.5rem;
-}
-
-.logo h1 {
-    font-family: "Oswald", Arial, sans-serif;
-    font-size: 2.2rem;
-    font-weight: 600;
-    letter-spacing: -0.12rem;
-    color: #282828;
-    white-space: nowrap;
-    cursor: pointer;
-}
-
-.logo-icon {
-    color: #f00;
-    padding-right: 0.5rem;
-}
-
-.site-search {
-    display: flex;
-    height: 3.2rem;
-}
-
-.search-input,
-.search-btn {
-    border: 0.1rem solid #ccc;
-}
-
-.search-input {
-    flex-basis: 60rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    border-top-left-radius: 0.3rem;
-    border-bottom-left-radius: 0.3rem;
-    border-right: none;
-    padding-left: 1rem;
-    color: var(--black-text);
-}
-
-.search-input::-webkit-input-placeholder {
-    color: var(--grey-text);
-}
-
-.search-input:-ms-input-placeholder {
-    color: var(--grey-text);
-}
-
-.search-input::-ms-input-placeholder {
-    color: var(--grey-text);
-}
-
-.search-input::placeholder {
-    color: var(--grey-text);
-}
-
-.search-btn {
-    flex: 0 0 6.5rem;
-    border-top-right-radius: 0.3rem;
-    border-bottom-right-radius: 0.3rem;
-    background-color: #f8f8f8;
-    color: var(--black-text);
-    cursor: pointer;
-}
-
-.search-btn:hover {
-    background-color: #f0f0f0;
-}
-
-.user-menu {
-    flex-basis: 16rem;
-    display: flex;
-    font-size: 1.6rem;
-    color: var(--grey-text);
-}
-
-.user-menu .btn {
-    flex: 0 0 4rem;
-}
-
-/* Channel banner */
-
-.channel-banner {
-    flex-basis: 16vw;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    background: url("https://images.unsplash.com/photo-1486597622250-f997d79907f8?w=1400&h=600&fit=crop") no-repeat center 35%;
-    background-size: cover;
-    padding: 1.6rem;
-}
-
-.channel-social-links {
-    padding: 1rem;
-    // background-color: rgba(0, 0, 0, 0.4);
-}
-
-.channel-social-links li {
-    display: inline-block;
-    font-size: 1.8rem;
-    padding-right: 1rem;
-}
-
-.channel-social-links li:last-of-type {
-    padding-right: 0;
-}
-
-.google-plus {
-    color: #dd4d40;
-}
-
-.twitter {
-    color: #1da1f3;
-}
-
-.facebook {
-    color: #3b5999;
-}
 
 /* Channel info */
-
 .channel-info {
     background-color: #fafafa;
     padding-top: 1.6rem;
 }
-
 .channel-info .container {
     display: flex;
     align-items: center;
 }
-
 .channel-icon {
     flex-basis: 8rem;
     height: 8rem;
     border-radius: 50%;
     overflow: hidden;
 }
-
 .channel-title {
     flex: 1 1 auto;
     margin: 0 2rem;
 }
-
 .channel-title h1 {
     font-size: 2.4rem;
     font-weight: 400;
     color: var(--black-text);
     white-space: nowrap;
 }
-
 .channel-title i {
     font-size: 1.4rem;
     color: #6e6e6e;
-}
-
-.channel-subscriber-count {
-    font-size: 1.4rem;
-    font-weight: 400;
-    line-height: 1.8;
-    color: var(--grey-text);
-}
-
-.channel-subscribe {
-    display: flex;
-    height: 3.7rem;
-    color: var(--grey-text);
-}
-
-.subscribe-btn {
-    width: 14.2rem;
-    font-size: 1.4rem;
-    font-weight: 500;
-    background-color: #eee;
-    margin-right: 0.4rem;
-}
-
-.notification-btn {
-    width: 4rem;
-    font-size: 2rem;
-}
-
-/* Channel navigation */
-
-.channel-nav {
-    background-color: #fafafa;
-    padding-bottom: 0.5rem;
-    white-space: nowrap;
-    overflow-x: auto;
-}
-
-.channel-nav ul {
-    display: flex;
-}
-
-.nav-item a {
-    display: inline-block;
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--grey-text);
-    padding: 1.5rem 3.2rem;
-}
-
-.nav-item a.current {
-    color: var(--black-text);
-    border-bottom: 0.3rem solid #6e6e6e;
-}
-
-.nav-item a:hover {
-    color: var(--black-text);
 }
 
 /* Channel content */
@@ -319,15 +123,14 @@ a {
     padding-top: 2.4rem;
     padding-bottom: 2.4rem;
     color: var(--grey-text);
+    text-decoration: none;
 }
-
 .channel-videos {
     display: flex;
     flex-direction: column;
     min-width: 42.5rem;
     max-width: 107rem;
 }
-
 .video-title {
     color: var(--black-text);
 }
@@ -359,34 +162,28 @@ a {
 }
 
 /* Featured video */
-
 .featured-video {
     display: flex;
     cursor: pointer;
 }
-
 .featured-video .video-info {
     flex: 1;
 }
-
 .featured-video .video-thumbnail {
     margin-right: 1.5rem;
 }
-
 .featured-video .video-title {
     font-size: 1.8rem;
     font-weight: 400;
 }
 
 /* Video playlists */
-
 .playlist {
     position: relative;
     padding-bottom: 1rem;
     overflow-x: auto;
     margin-top: 2rem;
 }
-
 .playlist-title {
     font-size: 1.6rem;
     font-weight: 500;
@@ -397,78 +194,23 @@ a {
     padding: 2rem 0;
     color: var(--black-text);
 }
-
 .playlist-videos {
     display: flex;
 }
-
 .playlist-video {
     flex-basis: 21rem;
     margin-right: 0.5rem;
     cursor: pointer;
 }
-
 .playlist-video .video-title {
     font-size: 1.4rem;
     font-weight: 500;
     padding: 0.5rem 0;
 }
-
 .playlist-video .video-creator {
     display: block;
 }
 
-/* Recommended channels */
-
-.recommended-channels {
-    margin-left: 2rem;
-}
-
-.recommended-channels-heading {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: var(--grey-text);
-    margin-bottom: 2rem;
-}
-
-.recommended-channels-group:first-of-type {
-    margin-bottom: 2rem;
-    border-bottom: 0.1rem solid #eee;
-}
-
-.recommended-channel {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-bottom: 2rem;
-    cursor: pointer;
-}
-
-.recommended-channel-icon {
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 0.8rem;
-}
-
-.recommended-channel-title {
-    flex: 1 0 50%;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--black-text);
-}
-
-.recommended-channel-subscribe {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--grey-text);
-    background-color: #eee;
-    width: 10rem;
-    height: 2.4rem;
-    margin-top: 0.8rem;
-}
 
 /*
 
