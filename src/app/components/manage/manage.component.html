@@ -5,13 +5,15 @@
         <th scope="col">#</th>
         <th scope="col">Title</th>
         <th scope="col">Description</th>
-        <th scope="col">Buttons</th>
+        <th scope="col">YouTubeId</th>
+        <th scope="col">Manage</th>
       </tr></thead>
       <tbody>
           <tr *ngFor = "let movie of movies">
             <th scope="row">{{movie.id}}</th>
             <td><a [routerLink]="['/detail', movie.id]">{{movie.title}}</a></td>
             <td>{{movie.description}}</td>
+            <td>{{movie.youTubeId}}</td>
             <td><button (click)="deleteMovie(movie.id)" class="btn btn-danger form-group">Delete</button></td>
           </tr>
           </tbody>

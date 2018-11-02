@@ -29,8 +29,10 @@ export class ManageComponent implements OnInit {
   }
 
   deleteMovie(id: number) {
+    if(window.confirm('Are sure you want to delete this item ?')) {
     this.youtubeService.deleteMovie(id);
     location.reload();
+    }
   }
 
 }
