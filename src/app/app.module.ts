@@ -16,6 +16,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { AddFormComponent } from './components/add-form/add-form.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
+import { VideoDetailListComponent } from './components/video-detail-list/video-detail-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VideoDetailComponent } from './components/video-detail/video-detail.com
     LoginFormComponent,
     AddFormComponent,
     DashboardComponent,
-    VideoDetailComponent
+    VideoDetailComponent,
+    VideoDetailListComponent
   ],
   imports: [
     BrowserModule,
