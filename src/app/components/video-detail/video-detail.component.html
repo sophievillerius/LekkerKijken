@@ -10,7 +10,7 @@
 <section class="channel-info">
 	<div class="container">
 		<div class="channel-title">
-			<h1>Titel: {{movie.title}}</h1>
+			<h1>Titel: <span *ngIf = "movie.title">{{movie.title}}</span></h1>
 			<div class="channel-subscriber-count">Description: {{movie.description}}</div>
 		</div>
 		<div class="channel-subscribe">
@@ -32,33 +32,4 @@
     <button (click)="goBack()">go back</button>
 </nav> -->
 
-<!-- Channel main content -->
-<main class="channel-content">
-	<div class="container">
-            <!-- <section class="channel-videos" *ngFor="let movie of movies"> -->
-            <section class="channel-videos">
-                <div class="likes-playlist playlist">
-                    <h2 class="playlist-title">Andere LekkerKijken videos:</h2>
-                    <div class="playlist-videos">
-                        <div class="playlist-video" tabindex="0">
-                            <div class="video-thumbnail">
-                                <!-- <img class="card-img" [src]="getYouTubeImg(movie.youTubeId) | safepipe" alt="Card image"> -->
-                                <img src="https://images.unsplash.com/photo-1515264741767-1b533a4cdcb7?w=210&h=118&fit=crop" alt="">
-                            </div>
-                            <div class="video-info">
-                                <h3 class="video-title">Titel........</h3>
-                                <ul class="video-meta-data">
-                                    <li class="video-creator">FlixndChillVEVO <i class="fas fa-check-circle"></i></li>
-                                    <!-- <li class="video-views">723K views</li> -->
-                                    <!-- <li class="video-upload-date">2 days ago</li> -->
-                                </ul>
-                            </div>
-                        </div>
-                    </div>      
-                </div>
-            </section>  
-            <!-- End of recommended channels section -->        
-        </div>
-        <!-- End of main content container -->
-    </main>
-    <!-- End of main content -->
+<app-video-detail-list></app-video-detail-list>

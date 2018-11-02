@@ -1,0 +1,34 @@
+<!-- Channel main content -->
+<main class="channel-content">
+    <div class="container">
+          <!-- <section class="channel-videos" *ngFor="let movie of movies"> -->
+              <section class="channel-videos">
+                  <div class="likes-playlist playlist">
+                      <h2 class="playlist-title">Andere LekkerKijken videos:</h2>
+                      <div class="playlist-videos">
+                          <div class="playlist-video" tabindex="0" *ngFor="let movie of movies">
+                              <a [routerLink]="['/detail', movie.id]" (click)="getMovie()">
+                                  <div class="video-thumbnail">
+                                      <img class="card-img" [src]="getYouTubeImg(movie.youTubeId) | safepipe" alt="Card image">
+                                      <!-- <img src="https://images.unsplash.com/photo-1515264741767-1b533a4cdcb7?w=210&h=118&fit=crop" alt=""> -->
+                                  </div>
+                              
+                              <div class="video-info">
+                                  <h3 class="video-title">{{movie.title}}</h3>
+                                  <ul class="video-meta-data">
+                                      <li class="video-creator">LekkerKijken <i class="fas fa-check-circle"></i></li>
+                                      <!-- <li class="video-views">723K views</li> -->
+                                      <!-- <li class="video-upload-date">2 days ago</li> -->
+                                  </ul>
+                              </div>
+                          </a>
+                          </div>
+                      </div>      
+                  </div>
+              </section>  
+              <!-- End of recommended channels section -->        
+          </div>
+          <!-- End of main content container -->
+      </main>
+      <!-- End of main content -->
+
