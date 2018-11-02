@@ -1,13 +1,64 @@
-<h1>Movie Title: {{movie.title}}</h1>
-<h2>{{movie.description}}</h2>
+<!-- Channel Banner -->
+<section class="channel-banner">
+	<div class="channel-social-links">
+		<ul>
+            <button class="btn btn-danger" (click)="goBack()">go back</button>
+		</ul>
+	</div>
+</section>
+<!-- Channel Info -->
+<section class="channel-info">
+	<div class="container">
+		<div class="channel-title">
+			<h1>Titel: {{movie.title}}</h1>
+			<div class="channel-subscriber-count">Description: {{movie.description}}</div>
+		</div>
+		<div class="channel-subscribe">
+            <!-- <button class="subscribe-btn btn">watch</button> -->
+		</div>
+	</div>
+</section>
+<!-- End of channel info section -->
+
 <div class="embed-responsive embed-responsive-16by9">
-<iframe width="100%" 
-            [src]="getVideoUrl(movie.youTubeId) | safepipe"
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-            </iframe>
+    <iframe width="100%" 
+    [src]="getVideoUrl(movie.youTubeId) | safepipe"
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
 </div>
-<nav>
+<!-- <nav>
     <button (click)="goBack()">go back</button>
-</nav>
+</nav> -->
+
+<!-- Channel main content -->
+<main class="channel-content">
+	<div class="container">
+            <!-- <section class="channel-videos" *ngFor="let movie of movies"> -->
+            <section class="channel-videos">
+                <div class="likes-playlist playlist">
+                    <h2 class="playlist-title">Andere LekkerKijken videos:</h2>
+                    <div class="playlist-videos">
+                        <div class="playlist-video" tabindex="0">
+                            <div class="video-thumbnail">
+                                <!-- <img class="card-img" [src]="getYouTubeImg(movie.youTubeId) | safepipe" alt="Card image"> -->
+                                <img src="https://images.unsplash.com/photo-1515264741767-1b533a4cdcb7?w=210&h=118&fit=crop" alt="">
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Titel........</h3>
+                                <ul class="video-meta-data">
+                                    <li class="video-creator">FlixndChillVEVO <i class="fas fa-check-circle"></i></li>
+                                    <!-- <li class="video-views">723K views</li> -->
+                                    <!-- <li class="video-upload-date">2 days ago</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>      
+                </div>
+            </section>  
+            <!-- End of recommended channels section -->        
+        </div>
+        <!-- End of main content container -->
+    </main>
+    <!-- End of main content -->
