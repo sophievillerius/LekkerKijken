@@ -37,7 +37,11 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     VideoDetailComponent,
     VideoDetailListComponent,
     ManageComponent,
+<<<<<<< HEAD
     VideoThumbnailComponent,
+=======
+    VideoThumbnailComponent
+>>>>>>> d21306dd2e1b04d8f272a1ac26fa6a9bb3b6183d
     EditModalComponent
   ],
   imports: [
