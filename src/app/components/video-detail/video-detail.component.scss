@@ -186,7 +186,7 @@ a {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    background: url("https://images.unsplash.com/photo-1486597622250-f997d79907f8?w=1400&h=600&fit=crop") no-repeat center 35%;
+    // background: url("https://images.unsplash.com/photo-1486597622250-f997d79907f8?w=1400&h=600&fit=crop") no-repeat center 35%;
     background-size: cover;
     padding: 1.6rem;
 }
@@ -237,23 +237,22 @@ a {
     overflow: hidden;
 }
 
-// .channel-title {
-//     flex: 1 1 auto;
-//     margin: 0 2rem;
-// }
+.channel-title {
+    flex: 1 1 auto;
+    margin: 0 2rem;
+}
 
-// .channel-title h1 {
-//     font-size: 16px;
-//     font-size: 2.4rem;
-//     font-weight: 400;
-//     color: var(--black-text);
-//     white-space: nowrap;
-// }
+.channel-title h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--black-text);
+    white-space: nowrap;
+}
 
-// .channel-title i {
-//     font-size: 1.4rem;
-//     color: #6e6e6e;
-// }
+.channel-title i {
+    font-size: 1.4rem;
+    color: #6e6e6e;
+}
 
 .channel-subscriber-count {
     font-size: 1.4rem;
@@ -502,7 +501,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
     }
 
     .channel-info .container {
-        display: grid;
+        display: flex;
         grid-template-columns: 8rem minmax(auto, 1fr) auto;
         grid-column-gap: 2rem;
     }
@@ -514,7 +513,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
     }
 
     .channel-content .container {
-        display: grid;
+        display: flex;
         grid-template-columns: 5fr 1fr;
         grid-gap: 2rem;
     }
