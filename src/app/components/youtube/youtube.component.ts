@@ -21,7 +21,6 @@ export class YoutubeComponent implements OnInit {
     // this.videoUrl = "https://www.youtube.com/embed/FhFjTc41UgU";
     // this.partialUrl = "FhFjTc41UgU";
     this.getMovies();
-  
   }
 
   getVideoUrl(id: any) {
