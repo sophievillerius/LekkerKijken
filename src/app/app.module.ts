@@ -19,6 +19,7 @@ import { VideoDetailComponent } from './components/video-detail/video-detail.com
 import { VideoDetailListComponent } from './components/video-detail-list/video-detail-list.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
+import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { VideoThumbnailComponent } from './components/video-thumbnail/video-thum
     VideoDetailListComponent,
     ManageComponent,
     VideoThumbnailComponent
+    EditModalComponent
   ],
   imports: [
     BrowserModule,

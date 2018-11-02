@@ -31,8 +31,23 @@ export class ManageComponent implements OnInit {
   deleteMovie(id: number) {
     if(window.confirm('Are sure you want to delete this item ?')) {
     this.youtubeService.deleteMovie(id);
+    console.log('delete succeeded!')
     location.reload();
     }
+  }
+
+  changeMovie(title: string, youTubeId: string, description: string, id: number) {
+    console.log(id);
+    let updateMovie: Movie = this.movies.find(Movie => Movie.id === id);
+    console.log(updateMovie);
+    console.log(title, youTubeId, description);
+    updateMovie.title = title;
+    updateMovie.youTubeId = youTubeId;
+    updateMovie.description = description;
+    console.log("trying to change..")
+    console.log(updateMovie);
+    this.youtubeService.updateMovie(id, updateMovie);
+    console.log("changed!")
   }
 
 }

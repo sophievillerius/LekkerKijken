@@ -15,10 +15,33 @@
 		<div class="channel-title">
 			<h2><span *ngIf = "movie.title">{{movie.title}}</span></h2>
 			<div class="channel-subscriber-count">{{movie.description}}</div>
+			<h6>Title: {{movie.title}}</h6>
+			<div class="channel-subscriber-count">Description: {{movie.description}}</div>
+		</div>
+		<div class="channel-subscribe">
+            <!-- <button class="subscribe-btn btn">watch</button> -->
 		</div>
 	</div>
 </section>
 <!-- End of channel info section -->
 
 <!-- Other videos -->
+Rate movie:
+<form>
+        <input type = "text" [(ngModel)]="rating" name="rating">
+        <button (click)="rateMovie(rating)">Submit</button>
+      </form>
+
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe width="100%" 
+    [src]="getVideoUrl(movie.youTubeId) | safepipe"
+    frameborder="0" 
+    allow="autoplay; encrypted-media" 
+    allowfullscreen>
+</iframe>
+</div>
+<!-- <nav>
+    <button (click)="goBack()">go back</button>
+</nav> -->
+
 <app-video-detail-list></app-video-detail-list>
