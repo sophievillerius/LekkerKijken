@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,22 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-    }).compileComponents();
+    });
+
+    TestBed.overrideComponent(AppComponent,
+      {
+        remove: {
+          templateUrl: './app.component.html'
+        }
+      });
+
+    TestBed.overrideComponent(AppComponent,
+      {
+        set: {
+          template: '<div></div>'
+        }
+      });
+    TestBed.compileComponents();
   }));
 
   it('should create the app', () => {
@@ -20,16 +36,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'day2-app'`, () => {
+  it(`should have as title 'LekkerKijken'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('day2-app');
+    expect(app.title).toEqual('LekkerKijken');
   });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to day2-app!');
-  });
 });

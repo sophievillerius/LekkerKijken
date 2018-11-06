@@ -3,6 +3,7 @@ import { Movie } from 'src/app/models/youtube-movie';
 import { ActivatedRoute } from '@angular/router';
 import { YoutubeService } from 'src/app/services/youtube.service';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-video-detail',
@@ -12,7 +13,6 @@ import { Location } from '@angular/common';
 export class VideoDetailComponent implements OnInit {
 
 
-  @Input() id: number;
   movie: Movie;
 
   constructor(
@@ -23,17 +23,14 @@ export class VideoDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovie();
-    console.log(this.movie);
   }
 
   getMovie(): void {
-    
     const id = +this.route.snapshot.paramMap.get('id');
-    console.log("id: " + id);
+    console.log('id: ' + id);
     this.youtubeService.getSingleMovie(id)
-      .subscribe(movie => this.movie = movie);
-    console.log("getting the movie");
-    console.log("movie: "  +this.movie)
+      .subscribe(data => this.movie = data);
+    console.log('getting the movie');
   }
 
   goBack(): void {
@@ -42,12 +39,28 @@ export class VideoDetailComponent implements OnInit {
 
   getVideoUrl(id: any) {
     const embedUrl = String(id);
-    return "https://www.youtube.com/embed/" + embedUrl;
+    return 'https://www.youtube.com/embed/' + embedUrl;
   }
 
   rateMovie(rating) {
     this.movie.rating = rating;
     this.youtubeService.updateMovie(this.movie.id, this.movie);
+  }
+ 
+  isRated(movie: Movie) {
+    if (movie.rating !== 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  getStarArray(rating: number) {
+    const result = [];
+    for (let i = 1; i <= rating; i++) {
+      result.push(i);
+    }
+    return result;
   }
 
 }

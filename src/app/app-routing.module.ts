@@ -9,13 +9,13 @@ import { VideoDetailComponent } from './components/video-detail/video-detail.com
 import { ManageComponent } from './components/manage/manage.component';
 
 const routes: Routes = [
-  {path: "", component: HomepageComponent},
-  {path: "videos", component: VideoCardComponent},
-  {path: "add", component: AddFormComponent},
-  {path: "login", component: LoginFormComponent},
-  {path: "dashboard", component: DashboardComponent},
+  {path: '', component: HomepageComponent},
+  {path: 'videos', component: VideoCardComponent},
+  {path: 'add', component: AddFormComponent},
+  {path: 'login', component: LoginFormComponent},
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'detail/:id', component: VideoDetailComponent },
-  {path: "manage", component: ManageComponent},
+  {path: 'manage', component: ManageComponent},
 ];
 
 @NgModule({

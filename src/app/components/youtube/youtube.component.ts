@@ -12,18 +12,14 @@ import { Observable } from 'rxjs';
 })
 export class YoutubeComponent implements OnInit {
 
-  videoUrl: string;
-  partialUrl: string;
   movies: Observable<Movie[]>;
   obs: any;
 
-  constructor(private youtubeService: YoutubeService,
+  constructor(
+    private youtubeService: YoutubeService,
     private store: Store<any>) { }
 
-  ngOnInit() {
-    // this.videoUrl = "https://www.youtube.com/embed/FhFjTc41UgU";
-    // this.partialUrl = "FhFjTc41UgU";
-    
+  ngOnInit() { 
     this.youtubeService.getAll();
     console.log('gotten the data from the service into the component')
     this.movies = this.store.pipe(select(s => s.movies));

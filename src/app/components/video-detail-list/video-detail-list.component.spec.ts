@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SafepipePipe } from '../../pipes/safepipe.pipe';
 
 import { VideoDetailListComponent } from './video-detail-list.component';
 
@@ -8,7 +9,7 @@ describe('VideoDetailListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoDetailListComponent ]
+      declarations: [ VideoDetailListComponent, SafepipePipe ]
     })
     .compileComponents();
   }));

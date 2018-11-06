@@ -8,8 +8,21 @@ describe('VideoCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VideoCardComponent ]
-    })
+      declarations: [ VideoCardComponent ],
+    });
+
+    TestBed.overrideComponent(VideoCardComponent,
+      {
+        remove: {
+          templateUrl: './video-card.component.html'
+        }
+      });
+    TestBed.overrideComponent(VideoCardComponent,
+      {
+        set: {
+          template: '<div></div>'
+        }
+      })
     .compileComponents();
   }));
 

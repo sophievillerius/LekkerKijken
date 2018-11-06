@@ -16,7 +16,7 @@ export class GetAll implements Action {
 export class Add implements Action {
     public readonly type = MovieActionTypes.ADD;
 
-    //TODO: make constructor for the movie (with title, id and description?)
+    // TODO: make constructor for the movie (with title, id and description?)
     constructor(
         public readonly movies: Movie[],
     ) {}

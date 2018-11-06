@@ -18,7 +18,7 @@ export class YoutubeService {
     private router: Router,
     ) { }
 
-  url: string = "http://localhost:8080/api/movies/";
+  url = 'http://localhost:8080/api/movies/';
 
   // getAll(): Observable<Movie[]> {
   //   return this.http.get<Movie[]>(this.url);
@@ -31,19 +31,19 @@ export class YoutubeService {
     }));
     console.log('getting all the data from the service');
   }
-  
+
   getSingleMovie(id): Observable<Movie> {
     return this.http.get<Movie>(this.url + id);
   }
 
   submitMovie(title: string, youTubeId: string, description: string): Observable<Movie> {
-    var newMovie: Movie = new Movie;
-    console.log("movie was made");
+    let newMovie: Movie = new Movie;
+    console.log('movie was made');
     newMovie.title = title;
     newMovie.youTubeId = youTubeId;
     newMovie.description = description;
     console.log(newMovie);
-    console.log("posting movie");
+    console.log('posting movie');
     // this.http.post(this.url, newMovie).subscribe((data) => {});
     return this.http.post<Movie>(this.url, newMovie).pipe(
       tap((movie: Movie) => this.router.navigate(['videos'])),
@@ -51,33 +51,33 @@ export class YoutubeService {
       // this.router.navigate(['videos'])),
       catchError(this.handleError<Movie>('addMovie'))
     );
-    console.log("post succeeded!");
+    // console.log('post succeeded!');
   }
 
   deleteMovie(id: number) {
-    console.log("deleting movie");
+    console.log('deleting movie');
     // this.http.delete(this.url + id).subscribe((data) => {});
     this.http.delete(this.url + id).subscribe((data) => this.store.dispatch({
       type: MovieActionTypes.REMOVE
     }));
-    console.log("delete and dispatch succeeded!");
+    console.log('delete and dispatch succeeded!');
   }
 
   updateMovie(id: number, movie: Movie) {
-    console.log("updating movie");
+    console.log('updating movie');
     this.http.put(this.url + id, movie).subscribe((data) => {});
-    console.log("update succeeded!");
+    console.log('update succeeded!');
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
- 
+
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
- 
+
       // TODO: better job of transforming error for user consumption
       console.log(`${operation} failed: ${error.message}`);
- 
+
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };

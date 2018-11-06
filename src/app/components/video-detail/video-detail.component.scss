@@ -34,6 +34,12 @@ a {
     text-decoration: none;
 }
 
+
+.fa-star:before {
+    content: "\f005";
+    color: #ff9d00;
+}
+
 .container {
     max-width: 138rem;
     margin: 0 auto;
@@ -609,4 +615,5 @@ Remove or comment-out the code block below to see how the browser will fall-back
     .site-search {
         display: none;
     }
+
 }

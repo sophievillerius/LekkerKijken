@@ -1,11 +1,8 @@
 <!-- Begin iFrame -->
 <div class="embed-responsive embed-responsive-16by9">
-	<iframe width="100%" 
-	[src]="getVideoUrl(movie.youTubeId) | safepipe"
-	frameborder="0" 
-	allow="autoplay; encrypted-media" 
-	allowfullscreen>
-</iframe>
+	<iframe width="100%" [src]="getVideoUrl(movie?.youTubeId) | safepipe" frameborder="0" allow="autoplay; encrypted-media"
+	 allowfullscreen>
+	</iframe>
 </div>
 <!-- End iFrame -->
 
@@ -13,17 +10,25 @@
 <section class="channel-info">
 	<div class="container">
 		<div class="channel-title">
-			<h2><span *ngIf = "movie.title">{{movie.title}}</span></h2>
-			<div class="channel-subscriber-count">{{movie.description}}<br>
-				Rate movie:
-				<form>
-					  <input type = "text" [(ngModel)]="rating" name="rating">
-					  <button (click)="rateMovie(rating)">Submit</button>
-					</form></div>
+			<h2><span>{{movie?.title}}</span></h2>
+			<div class="channel-subscriber-count">{{movie?.description}}<br>
+
+				<div *ngIf="isRated(movie);then content else other_content">here is ignored</div>    
+				<ng-template #content><i *ngFor="let star of getStarArray(movie.rating)" class="fa fa-star"></i></ng-template>
+				<ng-template #other_content>Rate movie:
+					<form #rateMovieForm="ngForm">
+						<input type="text" [(ngModel)]="rating" name="rating">
+						<button (click)="rateMovie(rating)">Submit</button>
+					</form></ng-template>
+
+				
+
+
+			</div>
 		</div>
-		
+
 		<div class="channel-subscribe">
-            <!-- <button class="subscribe-btn btn">watch</button> -->
+			<!-- <button class="subscribe-btn btn">watch</button> -->
 		</div>
 	</div>
 </section>

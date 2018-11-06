@@ -5,5 +5,5 @@ export class Movie {
     rating?: number;
     description?: string;
 
-    constructor() {};
+    constructor() {}
 }

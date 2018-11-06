@@ -8,9 +8,23 @@ describe('HomepageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomepageComponent ]
-    })
-    .compileComponents();
+      declarations: [ HomepageComponent ],
+    });
+
+    TestBed.overrideComponent(HomepageComponent,
+      {
+        remove: {
+          templateUrl: './homepage.component.html'
+        }
+      });
+
+    TestBed.overrideComponent(HomepageComponent,
+      {
+        set: {
+          template: '<div></div>'
+        }
+      });
+    TestBed.compileComponents();
   }));
 
   beforeEach(() => {

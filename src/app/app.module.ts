@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { HttpClientModule } from '@angular/common/http'
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
@@ -50,13 +51,17 @@ import { moviesReducer } from './store/movies/movies.reducer';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpModule,
     HttpClientModule,
     StoreModule.forRoot({ movies: moviesReducer}),
     // StoreModule.forRoot<IAppState>(rootReducer),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
   ],
-  providers: [
-  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
