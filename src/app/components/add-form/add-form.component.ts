@@ -23,8 +23,7 @@ export class AddFormComponent implements OnInit {
   }
 
   submit(title: string, youTubeId: string, description: string) {
-    this.youtubeService.submitMovie(title, youTubeId, description);
-    this.router.navigate(['videos']);
+    this.youtubeService.submitMovie(title, youTubeId, description).subscribe((data) => {});
   }
 
 }

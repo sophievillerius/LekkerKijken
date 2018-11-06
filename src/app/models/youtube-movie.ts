@@ -4,4 +4,6 @@ export class Movie {
     title?: string;
     rating?: number;
     description?: string;
+
+    constructor() {};
 }

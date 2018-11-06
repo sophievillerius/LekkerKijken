@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/youtube-movie';
 import { YoutubeService } from 'src/app/services/youtube.service';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 // import { getComponentViewByInstance } from '@angular/core/src/render3/context_discovery';
 
 @Component({
@@ -12,15 +14,19 @@ export class YoutubeComponent implements OnInit {
 
   videoUrl: string;
   partialUrl: string;
-  movies: Movie[];
+  movies: Observable<Movie[]>;
   obs: any;
 
-  constructor(private youtubeService: YoutubeService) { }
+  constructor(private youtubeService: YoutubeService,
+    private store: Store<any>) { }
 
   ngOnInit() {
     // this.videoUrl = "https://www.youtube.com/embed/FhFjTc41UgU";
     // this.partialUrl = "FhFjTc41UgU";
-    this.getMovies();
+    
+    this.youtubeService.getAll();
+    console.log('gotten the data from the service into the component')
+    this.movies = this.store.pipe(select(s => s.movies));
   }
 
   getVideoUrl(id: any) {
@@ -51,9 +57,9 @@ export class YoutubeComponent implements OnInit {
   }
 
 
-  getMovies() {
-    this.obs = this.youtubeService.getAll()
-          .subscribe(movies => this.movies = movies);
-  }
+  // getMovies() {
+  //   this.obs = this.youtubeService.getAll()
+  //         .subscribe(movies => this.movies = movies);
+  // }
 
 }

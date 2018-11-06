@@ -12,7 +12,8 @@ import { Location } from '@angular/common';
 export class VideoDetailComponent implements OnInit {
 
 
-  @Input() movie: Movie;
+  @Input() id: number;
+  movie: Movie;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,13 +23,17 @@ export class VideoDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovie();
+    console.log(this.movie);
   }
 
   getMovie(): void {
-    console.log('do i work?');
+    
     const id = +this.route.snapshot.paramMap.get('id');
+    console.log("id: " + id);
     this.youtubeService.getSingleMovie(id)
       .subscribe(movie => this.movie = movie);
+    console.log("getting the movie");
+    console.log("movie: "  +this.movie)
   }
 
   goBack(): void {

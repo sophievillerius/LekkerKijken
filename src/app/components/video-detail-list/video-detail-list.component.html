@@ -5,7 +5,7 @@
             <div class="likes-playlist playlist">
                 <h2 class="playlist-title">Andere LekkerKijken videos:</h2>
                 <div class="playlist-videos">
-                    <div class="playlist-video" tabindex="0" *ngFor="let movie of movies">
+                    <div class="playlist-video" tabindex="0" *ngFor="let movie of movies | async">
                         <a [routerLink]="['/detail', movie.id]" (click)="getMovie()">
                             <div class="video-thumbnail">
                                 <img class="card-img" [src]="getYouTubeImg(movie.youTubeId) | safepipe" alt="Card image">

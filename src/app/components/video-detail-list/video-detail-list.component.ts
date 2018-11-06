@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from 'src/app/services/youtube.service';
 import { Movie } from 'src/app/models/youtube-movie';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-video-detail-list',
@@ -10,14 +12,16 @@ import { Movie } from 'src/app/models/youtube-movie';
 export class VideoDetailListComponent implements OnInit {
 
   obs: any;
-  movies: Movie[];
+  movies: Observable<Movie[]>;
 
   constructor(
     private youtubeService: YoutubeService,
+    private store: Store<any>
   ) { }
 
   ngOnInit() {
-    this.getMovies();
+    this.youtubeService.getAll();
+    this.movies = this.store.pipe(select(s => s.movies));
   }
 
   getVideoUrl(id: any) {
@@ -25,10 +29,10 @@ export class VideoDetailListComponent implements OnInit {
     return "https://www.youtube.com/embed/" + embedUrl;
   }
 
-  getMovies() {
-    this.obs = this.youtubeService.getAll()
-          .subscribe(movies => this.movies = movies);
-  }
+  // getMovies() {
+  //   this.obs = this.youtubeService.getAll()
+  //         .subscribe(movies => this.movies = movies);
+  // }
 
   getYouTubeImg(id: any) {
     const embedUrl = String(id);

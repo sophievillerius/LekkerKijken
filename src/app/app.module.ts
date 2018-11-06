@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { AppComponent } from './app.component';
 import { YoutubeComponent } from './components/youtube/youtube.component';
 import { SafepipePipe } from './pipes/safepipe.pipe';
@@ -20,6 +23,9 @@ import { VideoDetailListComponent } from './components/video-detail-list/video-d
 import { ManageComponent } from './components/manage/manage.component';
 import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
+import { IAppState } from './store/app-state.interface';
+// import { rootReducer } from './store/app.reducer';
+import { moviesReducer } from './store/movies/movies.reducer';
 
 @NgModule({
   declarations: [
@@ -45,6 +51,9 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    StoreModule.forRoot({ movies: moviesReducer}),
+    // StoreModule.forRoot<IAppState>(rootReducer),
+    StoreDevtoolsModule.instrument()
   ],
   providers: [
   ],
