@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Movie } from '../../models/youtube-movie';
-import { YoutubeService } from 'src/app/services/youtube.service';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import * as movieActions from '../../store/movies/movies.actions';
+import { IAppState } from 'src/app/store/app-state.interface';
+import { movieloadSelector } from 'src/app/store/status/status.interface';
 // import { getComponentViewByInstance } from '@angular/core/src/render3/context_discovery';
 
 @Component({
@@ -14,15 +16,18 @@ export class YoutubeComponent implements OnInit {
 
   movies: Observable<Movie[]>;
   obs: any;
+  loadError$: Observable<boolean>;
 
   constructor(
-    private youtubeService: YoutubeService,
-    private store: Store<any>) { }
+    private store: Store<IAppState>) { }
 
-  ngOnInit() { 
-    this.youtubeService.getAll();
-    console.log('gotten the data from the service into the component')
+  ngOnInit() {
+    // this.youtubeService.getAll();
+    this.store.dispatch(new movieActions.GetAll());
+    console.log('gotten the data from the service into the component');
     this.movies = this.store.pipe(select(s => s.movies));
+
+    this.loadError$ = this.store.select(movieloadSelector);
   }
 
   getVideoUrl(id: any) {
@@ -49,7 +54,7 @@ export class YoutubeComponent implements OnInit {
   // }
 
   submit(title: string, youTubeId: string, description: string) {
-    this.youtubeService.submitMovie(title, youTubeId, description);
+    // this.youtubeService.submitMovie(title, youTubeId, description);
   }
 
 

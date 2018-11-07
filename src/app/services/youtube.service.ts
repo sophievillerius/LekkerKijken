@@ -18,18 +18,19 @@ export class YoutubeService {
     private router: Router,
     ) { }
 
-  url = 'http://localhost:8080/api/movies/';
+  url = 'http://localhost:3000';
 
   // getAll(): Observable<Movie[]> {
   //   return this.http.get<Movie[]>(this.url);
   // }
 
-  getAll() {
-    this.http.get<Movie[]>(this.url).subscribe(movies => this.store.dispatch({
-      type: MovieActionTypes.ADD,
-      movies: movies
-    }));
+  getAll(): Observable<Movie[]> {
+    // this.http.get<Movie[]>(this.url).subscribe(movies => this.store.dispatch({
+    //   type: MovieActionTypes.ADD,
+    //   movies: movies
+    // }));
     console.log('getting all the data from the service');
+    return this.http.get<Movie[]>(this.url);
   }
 
   getSingleMovie(id): Observable<Movie> {

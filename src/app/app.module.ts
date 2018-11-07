@@ -27,6 +27,9 @@ import { EditModalComponent } from './components/edit-modal/edit-modal.component
 import { IAppState } from './store/app-state.interface';
 // import { rootReducer } from './store/app.reducer';
 import { moviesReducer } from './store/movies/movies.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { MoviesEffects } from './store/movies/movies.effects';
+import { rootReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -53,8 +56,8 @@ import { moviesReducer } from './store/movies/movies.reducer';
     FormsModule,
     HttpModule,
     HttpClientModule,
-    StoreModule.forRoot({ movies: moviesReducer}),
-    // StoreModule.forRoot<IAppState>(rootReducer),
+    EffectsModule.forRoot([ MoviesEffects ]),
+    StoreModule.forRoot<IAppState>(rootReducer),
     StoreDevtoolsModule.instrument(),
   ],
   exports: [

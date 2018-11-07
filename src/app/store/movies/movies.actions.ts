@@ -2,13 +2,27 @@ import { Action } from '@ngrx/store';
 import { Movie } from 'src/app/models/youtube-movie';
 
 export enum MovieActionTypes {
-    GETALL = 'Get all [Movies]',
+    GETALL = '[Movies]Get all',
+    GETALL_SUCCESS = '[Movies] Get all success',
+    GETALL_ERROR = '[Movies] Get all error',
     ADD = '[Movie] Add',
     REMOVE = '[Movie] Remove'
 }
 
 export class GetAll implements Action {
     public readonly type = MovieActionTypes.GETALL;
+
+    constructor() {}
+}
+
+export class GetAllSuccess implements Action {
+    public readonly type = MovieActionTypes.GETALL_SUCCESS;
+
+    constructor(public readonly movies: Movie[]) {}
+}
+
+export class GetAllError implements Action {
+    public readonly type = MovieActionTypes.GETALL_ERROR;
 
     constructor() {}
 }
@@ -28,4 +42,4 @@ export class Remove implements Action {
     constructor(public readonly id: number) { }
 }
 
-export type MovieActionsUnion = GetAll | Add | Remove;
+export type MovieActionsUnion = GetAll | GetAllSuccess | GetAllError | Add | Remove;
