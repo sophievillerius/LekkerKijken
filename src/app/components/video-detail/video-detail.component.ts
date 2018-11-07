@@ -46,7 +46,7 @@ export class VideoDetailComponent implements OnInit {
     this.movie.rating = rating;
     this.youtubeService.updateMovie(this.movie.id, this.movie);
   }
- 
+
   isRated(movie: Movie) {
     if (movie.rating !== 0) {
       return true;

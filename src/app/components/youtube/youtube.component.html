@@ -1,9 +1,8 @@
 <div class="container">
     <div class="row">
-        <!-- <div *ngFor="let movie of movies">
-
-            <app-video-detail movie="movie"></app-video-detail>
-        </div> -->
+        <div class="error" *ngIf="loadError$ | async">
+            Het gaat helemaal fout!
+        </div>
     
     <div class="col-md-4" *ngFor="let movie of movies | async">
        

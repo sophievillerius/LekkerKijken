@@ -24,9 +24,12 @@ import { VideoDetailListComponent } from './components/video-detail-list/video-d
 import { ManageComponent } from './components/manage/manage.component';
 import { VideoThumbnailComponent } from './components/video-thumbnail/video-thumbnail.component';
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
+import { EffectsModule } from '@ngrx/effects';
 import { IAppState } from './store/app-state.interface';
 // import { rootReducer } from './store/app.reducer';
 import { moviesReducer } from './store/movies/movies.reducer';
+import { MoviesEffects } from './store/movies/movies.effects';
+import { rootReducer } from './store/app.reducer';
 
 @NgModule({
   declarations: [
@@ -53,9 +56,10 @@ import { moviesReducer } from './store/movies/movies.reducer';
     FormsModule,
     HttpModule,
     HttpClientModule,
-    StoreModule.forRoot({ movies: moviesReducer}),
-    // StoreModule.forRoot<IAppState>(rootReducer),
+    // StoreModule.forRoot({ movies: moviesReducer}),
+    StoreModule.forRoot<IAppState>(rootReducer),
     StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([MoviesEffects]),
   ],
   exports: [
     HeaderComponent,

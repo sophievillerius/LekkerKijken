@@ -25,11 +25,12 @@ export class YoutubeService {
   // }
 
   getAll() {
-    this.http.get<Movie[]>(this.url).subscribe(movies => this.store.dispatch({
-      type: MovieActionTypes.ADD,
-      movies: movies
-    }));
+    // this.http.get<Movie[]>(this.url).subscribe(movies => this.store.dispatch({
+    //   type: MovieActionTypes.ADD,
+    //   movies: movies
+    // }));
     console.log('getting all the data from the service');
+    return this.http.get<Movie[]>(this.url);
   }
 
   getSingleMovie(id): Observable<Movie> {
@@ -37,7 +38,7 @@ export class YoutubeService {
   }
 
   submitMovie(title: string, youTubeId: string, description: string): Observable<Movie> {
-    let newMovie: Movie = new Movie;
+    const newMovie: Movie = new Movie;
     console.log('movie was made');
     newMovie.title = title;
     newMovie.youTubeId = youTubeId;
