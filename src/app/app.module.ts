@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { YoutubeComponent } from './components/youtube/youtube.component';
@@ -26,10 +27,9 @@ import { VideoThumbnailComponent } from './components/video-thumbnail/video-thum
 import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 import { EffectsModule } from '@ngrx/effects';
 import { IAppState } from './store/app-state.interface';
-// import { rootReducer } from './store/app.reducer';
-import { moviesReducer } from './store/movies/movies.reducer';
 import { MoviesEffects } from './store/movies/movies.effects';
 import { rootReducer } from './store/app.reducer';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -48,15 +48,16 @@ import { rootReducer } from './store/app.reducer';
     VideoDetailListComponent,
     ManageComponent,
     VideoThumbnailComponent,
-    EditModalComponent
+    EditModalComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
-    // StoreModule.forRoot({ movies: moviesReducer}),
     StoreModule.forRoot<IAppState>(rootReducer),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([MoviesEffects]),

@@ -6,14 +6,16 @@
             <th scope="col">Title</th>
             <th scope="col">Description</th>
             <th scope="col">YouTubeId</th>
+            <th scope="col">Rating</th>
             <th scope="col">Manage</th>
         </tr></thead>
         <tbody>
             <tr *ngFor = "let movie of movies | async">
                 <th scope="row">{{movie.id}}</th>
-                <td><a routerLink="detail/{{movie.id}}">{{movie.title}}</a></td>
+                <td><a routerLink="/detail/{{movie.id}}">{{movie.title}}</a></td>
                 <td>{{movie.description}}</td>
                 <td>{{movie.youTubeId}}</td>
+                <td>{{movie.rating}}</td>
                 <td>
 
                     <!-- <button (click)="editMovie(movie.id)" class="btn btn-danger form-group">Edit</button> -->

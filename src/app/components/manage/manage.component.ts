@@ -7,6 +7,7 @@ import { Store, select } from '@ngrx/store';
 import { IAppState } from 'src/app/store/app-state.interface';
 import { Observable } from 'rxjs';
 import * as fromMovies from '../../store/movies/movies.actions';
+import * as movieActions from '../../store/movies/movies.actions';
 
 @Component({
   selector: 'app-manage',
@@ -22,11 +23,10 @@ export class ManageComponent implements OnInit {
     private youtubeService: YoutubeService,
     private route: ActivatedRoute,
     private readonly store: Store<IAppState>
-    
     ) { }
     
     ngOnInit() {
-      this.youtubeService.getAll();
+      this.store.dispatch(new movieActions.GetAll());
       this.movies = this.store.pipe(select(s => s.movies));
       // this.getMovies();
     }

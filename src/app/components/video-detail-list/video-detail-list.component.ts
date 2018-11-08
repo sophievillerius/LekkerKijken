@@ -3,6 +3,8 @@ import { YoutubeService } from 'src/app/services/youtube.service';
 import { Movie } from 'src/app/models/youtube-movie';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import * as movieActions from '../../store/movies/movies.actions';
+import { IAppState } from 'src/app/store/app-state.interface';
 
 @Component({
   selector: 'app-video-detail-list',
@@ -16,11 +18,12 @@ export class VideoDetailListComponent implements OnInit {
 
   constructor(
     private youtubeService: YoutubeService,
-    private store: Store<any>
+    private store: Store<IAppState>
   ) { }
 
   ngOnInit() {
-    this.youtubeService.getAll();
+    // this.youtubeService.getAll();
+    this.store.dispatch(new movieActions.GetAll());
     this.movies = this.store.pipe(select(s => s.movies));
   }
 

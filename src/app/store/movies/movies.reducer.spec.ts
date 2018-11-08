@@ -26,10 +26,10 @@ describe('Movie reducer', () => {
                 description: 'Test film'
             }
         ];
-        var addMovie: Movie[] = [
+        var addMovie: Movie = 
             <Movie> {
             description: 'New movie'
-        }];
+        };
 
         var expectedState: Movie[] = [
             <Movie> {

@@ -20,15 +20,7 @@ export class YoutubeService {
 
   url = 'http://localhost:8080/api/movies/';
 
-  // getAll(): Observable<Movie[]> {
-  //   return this.http.get<Movie[]>(this.url);
-  // }
-
-  getAll() {
-    // this.http.get<Movie[]>(this.url).subscribe(movies => this.store.dispatch({
-    //   type: MovieActionTypes.ADD,
-    //   movies: movies
-    // }));
+  getAll(): Observable<Movie[]> {
     console.log('getting all the data from the service');
     return this.http.get<Movie[]>(this.url);
   }
@@ -53,6 +45,15 @@ export class YoutubeService {
       catchError(this.handleError<Movie>('addMovie'))
     );
     // console.log('post succeeded!');
+  }
+
+  public add(newMovie: Movie): Observable<Movie> {
+    console.log('call the post from the service');
+    // return this.http.post<Movie>(this.url, newMovie).pipe(
+    //   tap((movie: Movie) => this.router.navigate(['videos'])),
+    //   catchError(this.handleError<Movie>('addMovie'))
+    // );
+    return this.http.post<Movie>(this.url, newMovie);
   }
 
   deleteMovie(id: number) {

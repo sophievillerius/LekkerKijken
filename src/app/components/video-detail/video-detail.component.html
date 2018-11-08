@@ -13,7 +13,7 @@
 			<h2><span>{{movie?.title}}</span></h2>
 			<div class="channel-subscriber-count">{{movie?.description}}<br>
 
-				<div *ngIf="isRated(movie);then content else other_content">here is ignored</div>    
+				<div *ngIf="movie?.rating;then content else other_content">here is ignored</div>    
 				<ng-template #content><i *ngFor="let star of getStarArray(movie.rating)" class="fa fa-star"></i></ng-template>
 				<ng-template #other_content>Rate movie:
 					<form #rateMovieForm="ngForm">
