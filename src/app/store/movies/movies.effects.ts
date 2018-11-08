@@ -38,4 +38,15 @@ export class MoviesEffects {
       )
     )
   );
+
+  @Effect()
+  edit$: Observable<movieActions.EditComplete | movieActions.EditError> = this.actions$.pipe(
+    ofType<movieActions.Edit>(MovieActionTypes.EDIT),
+    mergeMap(action =>
+      this.youtubeService.edit(action.movie).pipe(
+        map((movie: Movie) => new movieActions.EditComplete(movie)),
+        catchError(() => of(new movieActions.EditError()))
+      )
+    )
+  );
 }

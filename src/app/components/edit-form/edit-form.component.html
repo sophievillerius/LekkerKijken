@@ -1,3 +1,21 @@
-<p>
-  edit-form works!
-</p>
+<div class="container-form">
+    <form [formGroup]="editMovieForm" (ngSubmit)="edit()">
+  
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input name="title" formControlName="title" class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="youTubeId">youTubeId</label>
+        <input name="youTubeId" formControlName="youTubeId" class="form-control"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input name="description" formControlName="description" class="form-control" />
+      </div>
+  
+      <button type="submit">Save</button>
+    </form>
+  </div>

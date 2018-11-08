@@ -29,31 +29,31 @@ export class YoutubeService {
     return this.http.get<Movie>(this.url + id);
   }
 
-  submitMovie(title: string, youTubeId: string, description: string): Observable<Movie> {
-    const newMovie: Movie = new Movie;
-    console.log('movie was made');
-    newMovie.title = title;
-    newMovie.youTubeId = youTubeId;
-    newMovie.description = description;
-    console.log(newMovie);
-    console.log('posting movie');
-    // this.http.post(this.url, newMovie).subscribe((data) => {});
-    return this.http.post<Movie>(this.url, newMovie).pipe(
-      tap((movie: Movie) => this.router.navigate(['videos'])),
-      // console.log("added movie w/ id= "+movie.id)),
-      // this.router.navigate(['videos'])),
-      catchError(this.handleError<Movie>('addMovie'))
-    );
-    // console.log('post succeeded!');
-  }
+  // submitMovie(title: string, youTubeId: string, description: string): Observable<Movie> {
+  //   const newMovie: Movie = new Movie;
+  //   console.log('movie was made');
+  //   newMovie.title = title;
+  //   newMovie.youTubeId = youTubeId;
+  //   newMovie.description = description;
+  //   console.log(newMovie);
+  //   console.log('posting movie');
+  //   // this.http.post(this.url, newMovie).subscribe((data) => {});
+  //   return this.http.post<Movie>(this.url, newMovie).pipe(
+  //     tap((movie: Movie) => this.router.navigate(['videos'])),
+  //     // console.log("added movie w/ id= "+movie.id)),
+  //     // this.router.navigate(['videos'])),
+  //     catchError(this.handleError<Movie>('addMovie'))
+  //   );
+  //   // console.log('post succeeded!');
+  // }
 
   public add(newMovie: Movie): Observable<Movie> {
     console.log('call the post from the service');
-    // return this.http.post<Movie>(this.url, newMovie).pipe(
-    //   tap((movie: Movie) => this.router.navigate(['videos'])),
-    //   catchError(this.handleError<Movie>('addMovie'))
-    // );
     return this.http.post<Movie>(this.url, newMovie);
+  }
+
+  public edit(movie: Movie): Observable<Movie> {
+    return this.http.put<Movie>(this.url + movie.id, movie);
   }
 
   deleteMovie(id: number) {

@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { AdminGuard } from './guards/admin.guard';
+import { EditFormComponent } from './components/edit-form/edit-form.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'login', component: LoginFormComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'detail/:id', component: VideoDetailComponent },
+  {path: 'edit/:id', component: EditFormComponent },
   {path: 'manage', component: ManageComponent, canActivate: [ AdminGuard ]}
 ];
 

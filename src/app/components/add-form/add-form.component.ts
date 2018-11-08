@@ -20,11 +20,11 @@ export class AddFormComponent implements OnInit {
       youTubeId: new FormControl(''),
       description: new FormControl('')
     }
-  )
+  );
 
   // movie = new Movie;
 
-  constructor( 
+  constructor(
     private store: Store<IAppState>
   ) { }
 
@@ -43,7 +43,7 @@ export class AddFormComponent implements OnInit {
       title: this.newMovieForm.value.title,
       youTubeId: this.newMovieForm.value.youTubeId,
       description: this.newMovieForm.value.description
-    }
+    };
   }
 
   // submit(title: string, youTubeId: string, description: string) {
