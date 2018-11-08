@@ -29,17 +29,20 @@ export class VideoDetailListComponent implements OnInit {
 
   getVideoUrl(id: any) {
     const embedUrl = String(id);
-    return "https://www.youtube.com/embed/" + embedUrl;
+    return 'https://www.youtube.com/embed/' + embedUrl;
   }
 
-  // getMovies() {
-  //   this.obs = this.youtubeService.getAll()
-  //         .subscribe(movies => this.movies = movies);
-  // }
+  getStarArray(rating: number) {
+    const result = [];
+    for (let i = 1; i <= rating; i++) {
+      result.push(i);
+    }
+    return result;
+  }
 
   getYouTubeImg(id: any) {
     const embedUrl = String(id);
-    return "https://img.youtube.com/vi/" + embedUrl + "/0.jpg"
+    return 'https://img.youtube.com/vi/' + embedUrl + '/0.jpg';
   }
 
 }

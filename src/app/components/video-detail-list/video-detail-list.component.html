@@ -13,7 +13,7 @@
                             <div class="video-info">
                                 <h3 class="video-title">{{movie.title}}</h3>
                                 <ul class="video-meta-data">
-                                    <li class="video-creator">LekkerKijken <i class="fas fa-check-circle"></i></li>
+                                    <li class="video-creator"><i *ngFor="let star of getStarArray(movie.rating)" class="fa fa-star"></i></li>
                                 </ul>
                             </div>
                         </a>

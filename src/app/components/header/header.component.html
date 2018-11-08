@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">    
-    <a class="navbar-brand" href="#"><img src="assets/images/logo2.png" width="150">
+    <a class="navbar-brand" href="#"><img src="assets/images/logo3.png" width="150">
     </a>
     <!-- navbar links -->
     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -7,14 +7,19 @@
         <li class="nav-item">
             <a routerLink="videos" class="nav-link">videos</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isLoggedIn()">
             <a routerLink="add" class="nav-link">add</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isLoggedIn()">
             <a routerLink="manage" class="nav-link">manage</a>
         </li>
       </ul>
       <!-- login button -->
-      <a routerLink="login" class="btn btn-danger">login</a>
+      <div *ngIf="isLoggedIn();then content else other_content">  </div>  
+				<ng-template #content><a (click)="logout()" class="btn btn-danger" style="color: white">logout</a></ng-template>
+                <ng-template #other_content><a routerLink="login" class="btn btn-danger">login</a></ng-template>
+            
+      
+      
     </div>
   </nav>
